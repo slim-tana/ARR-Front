@@ -1,0 +1,41 @@
+<form #modelF="ngForm" (ngSubmit)="UpdateProjet(modelF.value)">
+    <label for="id">Id Projet</label>
+    <input type="number" class="form-control" name="id" [(ngModel)]="projet.id" #id="ngModel" disabled>
+  
+    <label for="projectName">Nom du projet</label>
+    <input type="text" class="form-control" name="projectName" [(ngModel)]="projet.projectName" #version="ngModel">
+  
+    <label for="description">Description</label>
+    <input type="text" class="form-control" name="description" [(ngModel)]="projet.description" #license="ngModel">
+  
+    <label for="targetDate">Date cible</label>
+    <input type="date" class="form-control" name="targetDate" [(ngModel)]="projet.targetDate" #link="ngModel">
+  
+    <label for="date">Date</label>
+    <input type="date" class="form-control" name="date" [(ngModel)]="projet.date" #name="ngModel">
+  
+    <label for="toolName">Nom de l'outil</label>
+    <input type="text" class="form-control" name="toolName" [(ngModel)]="projet.toolName" #license="ngModel">
+  
+    <label for="linkTotool">Lien vers l'outil</label>
+    <input type="text" class="form-control" name="linkTotool" [(ngModel)]="projet.linkTotool" #link="ngModel">
+  
+    <label for="solutionAproach">Approche de solution</label>
+    <input type="text" class="form-control" name="solutionAproach" [(ngModel)]="projet.solutionAproach" #name="ngModel">
+  
+    <label for="applicationExposure">Exposition de l'application</label>
+    <input type="text" class="form-control" name="applicationExposure" [(ngModel)]="projet.applicationExposure" #version="ngModel">
+  
+    <label for="hostingModel">Modèle d'hébergement</label>
+    <input type="text" class="form-control" name="hostingModel" [(ngModel)]="projet.hostingModel" #license="ngModel">
+  
+    <label for="openSourceSoftware">Logiciel open source</label>
+    <input type="text" class="form-control" name="openSourceSoftware" [(ngModel)]="projet.openSourceSoftware" #link="ngModel">
+  
+    <label for="linkLicence">Lien de licence</label>
+    <input type="text" class="form-control" name="linkLicence" [(ngModel)]="projet.linkLicence" #link="ngModel">
+  
+    <br>
+    <input type="submit" class="btn btn-primary" value="Mettre à jour">
+  </form>
+  

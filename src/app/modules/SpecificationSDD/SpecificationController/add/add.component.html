@@ -1,0 +1,23 @@
+<!-- add.component.html -->
+
+<h1 mat-dialog-title>{{ data }} une conception de haut niveau HLD</h1>
+<div mat-dialog-content class="form-container">
+  <form [formGroup]="SpecificationFormGroup" class="add-form">
+    <div class="file-upload-container">
+      <label for="fileInput" class="file-label">
+        <mat-icon class="file-icon">attach_file</mat-icon>
+        Choisir un fichier PDF
+      </label>
+      <input id="fileInput" type="file" (change)="onFileChange($event)" accept=".pdf" formControlName="file" required>
+      <!-- Ajouter les champs pour le nom du fichier, le type et la version -->
+      <input type="hidden" formControlName="fileName" [value]="fileName">
+    </div>
+
+    <div class="form-actions" align="end">
+      <button mat-button (click)="onCancel()" class="cancel-button">Annuler</button>
+      <button mat-raised-button [disabled]="!SpecificationFormGroup.valid" (click)="onAddSDDSpec()" class="add-button">
+        Ajouter
+      </button>
+    </div>
+  </form>
+</div>

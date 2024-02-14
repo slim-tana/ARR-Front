@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="project-details">
+    <div class="back-arrow">
+      <a (click)="goBack()">
+        <h3 style="color: #dc6900;">Retour</h3>
+      </a>
+    </div>
+    <div class="details-header">
+      <h1>VERACODE</h1>
+    </div>
+    <div class="details-table">
+      <table>
+        <thead>
+          <tr>
+        
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Version</th>
+            <th>Environnement</th>
+            <th>Code succursale</th>
+            <th>Mots clés</th>
+            <th>PDF Documents</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let element of data">
+         
+            <td>{{ element.name }}</td>
+            <td>{{ element.date }}</td>
+            <td>{{ element.version }}</td>
+            <td>
+              <a [href]="element.environment" target="_blank">{{ element.environment }}</a>
+          </td>
+          <td>
+            <a [href]="element.branchecode" target="_blank">{{ element.branchecode }}</a>
+        </td>
+        <td>
+          <a [href]="element.tags" target="_blank">{{ element.tags }}</a>
+      </td>
+            <td>
+              <button mat-icon-button color="primary" (click)="onDownloadPdf(element)">
+                <mat-icon>picture_as_pdf</mat-icon>
+              </button>
+            </td>
+            <td>
+           
+              <button mat-icon-button color="primary" (click)="onDelete(element)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="nav-links">
+        <button (click)="onAdd()" class="custom-link">Enregistrer un document</button>
+      </div>
+    </div>
+  </div>
+</div>

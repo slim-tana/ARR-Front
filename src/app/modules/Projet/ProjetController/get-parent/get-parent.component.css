@@ -1,0 +1,126 @@
+.container {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .search-container {
+    margin-bottom: 5px;
+    margin-top:30px;
+  }
+  
+  .search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 23%;
+    box-sizing: border-box;
+    margin-left: 10px;
+  }
+  
+  .row.movies {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .col-md-3,
+  .col-sm-6 {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .project-details {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  }
+  
+  .details-header h1 {
+    text-align: center;
+    /*margin-bottom: 20px;*/
+    color: #dc6900;
+  }
+  
+
+  
+  button.mat-icon-button .mat-icon {
+    color: #e0301e; /* Changez la couleur comme vous le souhaitez */
+  }
+ 
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  .pagination ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pagination ul li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .pagination ul li a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination ul li a:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Dans le fichier CSS correspondant */
+.sort-button {
+  background-color: #dc6900; /* Couleur de fond du bouton */
+  color: white; /* Couleur du texte */
+  border: none; /* Supprimez la bordure du bouton */
+  padding: 10px 15px; /* Espace intérieur du bouton */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px; /* Coins arrondis */
+  transition: background-color 0.3s; /* Animation de transition pour la couleur de fond */
+  margin-left: 10px;
+}
+
+.sort-button:hover {
+  background-color: #dc6900; /* Nouvelle couleur de fond au survol */
+}
+
+/* Icône de tri (assurez-vous d'inclure la bibliothèque d'icônes, par exemple Font Awesome) */
+.sort-icon {
+  margin-left: 5px; /* Ajustez la marge selon vos besoins */
+}
+
+/* Style de base pour l'icône de tri */
+.sort-icon::before {
+  content: "\2195"; /* Code Unicode pour une flèche vers le haut et une flèche vers le bas */
+  font-size: 12px; /* Taille de la police de l'icône */
+  vertical-align: middle; /* Alignement vertical au centre */
+  transition: transform 0.3s; /* Animation de transition pour la rotation de l'icône */
+}
+
+/* Rotation de l'icône de tri en fonction de la direction du tri */
+.sort-button.desc .sort-icon::before {
+  transform: rotate(180deg);
+}
+
+

@@ -1,0 +1,385 @@
+<div class="container mt-5">
+  <div class="project-details">
+    <div class="details-header">
+      <h1>Enregistrer une nouvelle technologie</h1>
+    </div>
+    <div class="details-table">
+      <mat-accordion mutli="false">
+        <mat-expansion-panel [expanded]="false"> 
+          <mat-expansion-panel-header> 
+            <mat-panel-title>
+              Commencer (GS)
+            </mat-panel-title> 
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayout.lt-sm="column" class="scrolform">
+            <form [formGroup]="formulaireGs">
+              <div class="form-group">
+                <label for="firstName">Demandé pour</label>
+                <select formControlName="firstName" class="form-control">
+                  <option value="">Sélectionnez un utilisateur</option>
+                  <!-- Remplacez les valeurs statiques ci-dessous par la liste réelle des noms d'utilisateurs -->
+                  <option *ngFor="let user of ListUser" [value]="user.id">{{ user.firstName + ' ' + user.lastName }}</option>
+                </select>
+                <div *ngIf="formulaireGs?.get('firstName')?.invalid && formulaireGs?.get('firstName')?.touched" class="error-message">
+                  Le champ 'Demandé pour' est requis.
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Demandé pour l'e-mail</label>
+                <select formControlName="email" class="form-control">
+                  <option value="">Sélectionnez un email</option>
+                  <!-- Remplacez les valeurs statiques ci-dessous par la liste réelle des noms d'utilisateurs -->
+                  <option *ngFor="let user of ListUser" [value]="user.id">{{ user.email }}</option>
+                </select>
+                <div *ngIf="formulaireGs?.get('email')?.invalid && formulaireGs?.get('email')?.touched" class="error-message">
+                  Le champ 'email' est requis.
+                </div>
+              </div>
+
+         
+            
+              <div class="form-group">
+                <label for="territory">Territoire</label>
+                <select formControlName="territory" class="form-control">
+                  <option value="">Sélectionnez un territoire</option>
+                  <option value="Galaxy Americas">Galaxy Americas</option>
+                  <option value="Galaxy Canada">Galaxy Canada</option>
+                  <option value="Galaxy Argentina">Galaxy Argentina</option>
+                  <option value="Galaxy Australia">Galaxy Australia</option>
+                  <option value="Galaxy Europe">Galaxy Europe</option>
+                  <option value="PwC France">PwC France</option>
+                  <option value="PwC Germany">PwC Germany</option>
+                </select>
+                <div *ngIf="formulaireGs?.get('territory')?.invalid && formulaireGs?.get('territory')?.touched" class="error-message">
+                  Veuillez sélectionner un Territoire.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="lineOfservice">Ligne de service (LoS)</label>
+                <select formControlName="lineOfservice" class="form-control">
+                  <option value="">Sélectionnez un line de service</option>
+                  <option value="Advisory">Advisory</option>
+                  <option value="Assurance">Assurance</option>
+                  <option value="Internal Firm Services">Internal Firm Services</option>
+                  <option value="Tax">Tax</option>
+                  <option value="xLOS">xLOS</option>
+                </select>
+                <div *ngIf="formulaireGs?.get('lineOfservice')?.invalid && formulaireGs?.get('lineOfservice')?.touched" class="error-message">
+                  Veuillez sélectionner un Ligne de service (LoS).
+                </div>
+              </div>
+            
+            </form>
+            
+          </div>
+        </mat-expansion-panel>
+   
+        <mat-expansion-panel [expanded]="false"> 
+          <mat-expansion-panel-header> 
+            <mat-panel-title>
+              Classification technologique (TC)      
+            </mat-panel-title> 
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayout.lt-sm="column"  class="scrolform"> <!--Date de mise à jour-->
+            <form [formGroup]="formulaireTc" >
+              <div class="form-group">
+                <label for="type">Type de technologie</label>
+                <select formControlName="type" class="form-control">
+                  <option value="">Sélectionnez le type de technologie</option>
+                  <option value="BUSINESS_APPLICATION">Business Application</option>
+                  <option value="APPLICATION_SOFTWARE">Application Software</option>
+                  <option value="AUTOMATION">Automation</option>
+                  <option value="INFRASTRUCTURE_SERVICE">Infrastructure Service</option>
+                  <option value="INFRASTRUCTURE_SOFTWARE">Infrastructure Software</option>
+                  <option value="INTERFACE">Interface</option>
+                </select>
+                <div *ngIf="formulaireTc?.get('type')?.invalid && formulaireTc?.get('type')?.touched" class="error-message">
+                  Veuillez sélectionner le type de technologie.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="name">Nom de la technologie</label>
+                <input type="text" formControlName="name" class="form-control">
+                <div *ngIf="formulaireTc?.get('name')?.invalid && formulaireTc?.get('name')?.touched" class="error-message">
+                  Le champ 'Nom de la technologie' est requis.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="description">Description de la technologie</label>
+                <textarea formControlName="description" class="form-control"></textarea>
+              </div>
+            
+             
+            </form>
+            
+          </div>
+      
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="false"> 
+          <mat-expansion-panel-header> 
+            <mat-panel-title>
+              Gestion de projet (PM)
+            </mat-panel-title> 
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayout.lt-sm="column"  class="scrolform"> <!--Date de mise à jour-->
+            <form [formGroup]="formulairePm">
+              <!-- ... (Champs existants) ... -->
+            
+              <div class="form-group">
+                <label for="projectName">Nom du projet</label>
+                <input type="text" formControlName="projectName" class="form-control">
+                <div *ngIf="formulairePm?.get('projectName')?.invalid && formulairePm?.get('projectName')?.touched" class="error-message">
+                  Le champ 'Nom du projet' est requis.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="toolName">Nom de l'outil</label>
+                <input type="text" formControlName="toolName" class="form-control">
+                <div *ngIf="formulairePm?.get('toolName')?.invalid && formulairePm?.get('toolName')?.touched" class="error-message">
+                  Le champ 'Nom de l'outil' est requis.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="linkTotool">Lien vers l'outil</label>
+                <input type="text" formControlName="linkTotool" class="form-control">
+                <div *ngIf="formulairePm?.get('linkTotool')?.invalid && formulairePm?.get('linkTotool')?.touched" class="error-message">
+                  Le champ 'Lien vers l'outil' est requis.
+                </div>
+              </div>
+            </form>
+            
+            
+          </div>
+        </mat-expansion-panel>
+ 
+        <mat-expansion-panel [expanded]="false"> 
+          <mat-expansion-panel-header> 
+            <mat-panel-title>
+              Propriétaire de la technologie Détails (TOD)
+            </mat-panel-title> 
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayout.lt-sm="column"  class="scrolform"> <!--Date de mise à jour-->
+              <form [formGroup]="formulaireTOD" >
+                <!-- ... (Champs existants) ... -->
+              
+                <div class="form-group">
+                  <label for="primaryOwner">Propriétaire de la technologie principale</label>
+                  <input type="text" formControlName="primaryOwner" class="form-control">
+                  <div *ngIf="formulaireTOD?.get('primaryOwner')?.invalid && formulaireTOD?.get('primaryOwner')?.touched" class="error-message">
+                    Le champ 'Propriétaire de la technologie principale' est requis.
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <label for="secondaryOwner">Propriétaire de technologie secondaire</label>
+                  <input type="text" formControlName="secondaryOwner" class="form-control">
+                  <!-- Aucune validation requise pour ce champ -->
+                </div>
+              
+                <div class="form-group">
+                  <label for="additionalOwner">Propriétaires supplémentaires</label>
+                  <input type="text" formControlName="additionalOwner" class="form-control">
+                  <!-- Aucune validation requise pour ce champ -->
+                </div>
+        
+              </form>
+            
+            
+            
+          </div>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="false"> 
+          <mat-expansion-panel-header> 
+            <mat-panel-title>
+              Détails du propriétaire de l'entreprise (BOD)
+            </mat-panel-title> 
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayout.lt-sm="column"  class="scrolform"> <!--Date de mise à jour-->
+            <form [formGroup]="formulaireBOD" >
+              <!-- ... (Champs existants) ... -->
+            
+              <div class="form-group">
+                <label for="primaryOwner">Propriétaires d'entreprise principaux</label>
+                <input type="text" formControlName="primaryOwner" class="form-control">
+                <div *ngIf="formulaireBOD?.get('primaryOwner')?.invalid && formulaireBOD?.get('primaryOwner')?.touched" class="error-message">
+                  Le champ 'Propriétaires d'entreprise principaux' est requis.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="secondaryOwner">Propriétaire d'entreprise secondaire</label>
+                <input type="text" formControlName="secondaryOwner" class="form-control">
+                <!-- Aucune validation requise pour ce champ -->
+              </div>
+            
+              <div class="form-group">
+                <label for="additionalOwner">Propriétaires d'entreprise supplémentaires</label>
+                <input type="text" formControlName="additionalOwner" class="form-control">
+                <!-- Aucune validation requise pour ce champ -->
+              </div>
+            
+      
+            </form>
+            
+            
+            
+          </div>
+        </mat-expansion-panel>
+   
+        <mat-expansion-panel [expanded]="false"> 
+          <mat-expansion-panel-header> 
+            <mat-panel-title>
+              Informations générales (GI)
+            </mat-panel-title> 
+          </mat-expansion-panel-header>
+          <div fxLayout="row wrap" fxLayout.lt-sm="column"  class="scrolform"> <!--Date de mise à jour-->
+            
+            <form [formGroup]="formulairePm">
+              <!-- ... (Champs existants) ... -->
+            
+              <div class="form-group">
+                <label for="date">date de début</label>
+                <input type="date" formControlName="date" class="form-control">
+                <!-- Aucune validation requise pour ce champ -->
+              </div>
+              <div class="form-group">
+                <label for="targetDate">Date de lancement cible</label>
+                <input type="date" formControlName="targetDate" class="form-control">
+                <!-- Aucune validation requise pour ce champ -->
+              </div>
+              <div class="form-group">
+                <label for="solutionAproach">Approche de solution</label>
+                <select formControlName="solutionAproach" class="form-control">
+                  <option value="">Sélectionnez Solution Approach</option>
+                  <option value="Buy (COTS)">Buy (COTS)</option>
+                  <option value="Build (Custom Development)">Build (Custom Development)</option>
+                  <option value="Rent (Saas)">Rent (Saas)</option>
+                  <option value="Build (Custom Development)">Rent (Saas with PwC Customization)</option>
+                </select>
+                <div *ngIf="formulairePm?.get('solutionAproach')?.invalid && formulairePm?.get('solutionAproach')?.touched" class="error-message">
+                  Veuillez sélectionner une Approche de solution.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="applicationExposure">Exposition aux applications</label>
+                <select formControlName="applicationExposure" class="form-control">
+                  <option value="">Sélectionnez Application Exposure</option>
+                  <option value="PwC External">PwC External</option>
+                  <option value="PwC Internal">PwC Internal</option>
+                  <option value="PwC Internal External">PwC Internal External</option>
+                </select>
+                <div *ngIf="formulairePm?.get('applicationExposure')?.invalid && formulairePm?.get('applicationExposure')?.touched" class="error-message">
+                  Veuillez sélectionner une Exposition aux applications.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="hostingModel">Modèle d'hébergement</label>
+                <select formControlName="hostingModel" class="form-control">
+                  <option value="">Sélectionnez Hosting Model</option>
+                  <option value="Azure (PwC managed)">Azure (PwC managed)</option>
+                  <option value="PwC Office">PwC Office</option>
+                  <option value="PwC Managed Azure">PwC Managed Azure</option>
+                  <option value="Client Hosted">Client Hosted</option>
+                  <option value="Global Hosting Centre">Global Hosting Centre</option>
+                  <option value="Google (PwC manged)">Google (PwC manged)</option>
+                  <option value="Microsoft Azure(PwC Australia managed)">Microsoft Azure(PwC Australia managed)</option>
+                </select>
+                <div *ngIf="formulairePm?.get('hostingModel')?.invalid && formulairePm?.get('hostingModel')?.touched" class="error-message">
+                  Veuillez sélectionner un modèle d'hébergement.
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <label for="openSourceSoftware">Logiciels open source</label>
+                <select formControlName="openSourceSoftware" class="form-control">
+                  <option value="">Sélectionnez open source</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                <div *ngIf="formulairePm?.get('openSourceSoftware')?.invalid && formulairePm?.get('openSourceSoftware')?.touched" class="error-message">
+                  Veuillez sélectionner Logiciels open source.
+                </div>
+              </div>
+              
+              <div *ngIf="formulairePm?.get('openSourceSoftware')?.value === 'Yes'">
+                <div class="form-group">
+                  <label for="linkLicence">Licence Open Source</label>
+                  <input type="text" formControlName="linkLicence" class="form-control">
+                  <!-- Aucune validation requise pour ce champ -->
+                </div>
+              </div>
+            
+      
+            </form>
+            
+            
+            
+            
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+
+
+  
+
+  <!-- <mat-expansion-panel [expanded]="false"> 
+    <mat-expansion-panel-header> 
+      <mat-panel-title>Attachments (PDF)
+      </mat-panel-title> 
+      
+    </mat-expansion-panel-header>
+    <div fxLayout="row wrap" fxLayout.lt-sm="column"> 
+      <form [formGroup]="formulairePm">
+        <div class="form-group">
+          <label for="file1" class="custom-file-upload" (click)="triggerFileInput1.click()">
+            <i class="fas fa-cloud-upload-alt"></i> Ajouter HLD
+            <input type="file" #triggerFileInput1 formControlName="file1" (change)="onFileChange($event, 1)" accept=".pdf" style="display: none;" />
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label for="file2" class="custom-file-upload" (click)="triggerFileInput2.click()">
+            <i class="fas fa-cloud-upload-alt"></i> Ajouter SDD
+            <input type="file" #triggerFileInput2 formControlName="file2" (change)="onFileChange($event, 2)" accept=".pdf" style="display: none;" />
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label for="file3" class="custom-file-upload" (click)="triggerFileInput3.click()">
+            <i class="fas fa-cloud-upload-alt"></i> Ajouter Pentest
+            <input type="file" #triggerFileInput3 formControlName="file3" (change)="onFileChange($event, 3)" accept=".pdf" style="display: none;" />
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <label for="file4" class="custom-file-upload" (click)="triggerFileInput4.click()">
+            <i class="fas fa-cloud-upload-alt"></i> Ajouter Veracode
+            <input type="file" #triggerFileInput4 formControlName="file4" (change)="onFileChange($event, 4)" accept=".pdf" style="display: none;" />
+          </label>
+        </div>
+    </form>
+      
+    </div>
+  </mat-expansion-panel> -->
+<br>
+
+<div class="nav-links">
+  <button class="custom-link" (click)="onSubmitAllForms()">Enregistrer</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+ 

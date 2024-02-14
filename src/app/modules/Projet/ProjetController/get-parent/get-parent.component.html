@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="project-details">
+      <div class="details-header">
+        <h1>Evaluation de la préparation des applications</h1>
+      </div>
+
+      <div class="search-container">
+        <input type="text" placeholder="Recherche..." class="search-input" class="search-input" [(ngModel)]="searchTerm" (input)="onSearch()">
+        <button class="sort-button" (click)="sortProjectsByDate()">
+          Trier par date <i class="sort-icon"></i>
+        </button>
+      </div>
+  
+      <div class="row movies">
+        <div class="col-md-3 col-sm-6" *ngFor="let li of pagedProjects | paginate: { itemsPerPage: 8, currentPage: p, id: 'projectPagination' }">
+          <app-get-child [projet]="li" ></app-get-child>
+        </div>
+      </div>
+  
+      <pagination-controls (pageChange)="p = $event" id="projectPagination" class="pagination"></pagination-controls>
+    </div>
+  </div>
+  

@@ -1,0 +1,97 @@
+<div class="container mt-5">
+  <div *ngIf="isLoading" class="loading text-center">
+      <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+      </div>
+      <p>Chargement...</p>
+  </div>
+
+  <div *ngIf="!isLoading" id="contentToConvert" class="project-details">
+
+      <div class="back-arrow">
+        <a routerLink="/Projet/ProjetHome/getParent">
+          <h3 style="  color: #dc6900;">Retour</h3>
+        </a>
+      </div>
+
+      <div class="details-header">
+          <h1>Détails</h1>
+         
+      </div>
+
+      <div class="details-table">
+          <table>
+              <thead>
+                  <tr>
+        
+                      <th>Nom du projet</th>
+                      <th>Date debut</th>
+                      <th>Date cible</th>
+                      <th>Nom de l'outil</th>
+                      <th>Lien vers l'outil</th>
+                      <th>Approche de solution</th>
+                      <th>Exposition aux applications</th>
+                      <th>Modèle d'hébergement</th>
+                      <th>créateurs</th>
+                      <th>lien de Licence </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                  
+                      <td>{{ project.projectName }}</td>                      
+                      <td>{{ project.date }}</td>
+                      <td>{{ project.targetDate }}</td>
+                      <td>{{ project.toolName }}</td>
+                      <td>
+                        <a [href]="project.linkTotool" target="_blank">{{ project.linkTotool }}</a>
+                    </td>
+                      <td>{{ project.solutionAproach }}</td>
+                      <td>{{ project.applicationExposure }}</td>
+                      <td>{{ project.hostingModel }}</td>
+                      <td class="link">
+                        <a [routerLink]="'/User/UserHome/get/' + project.id">User</a>
+                    </td>
+                    <td>
+                        <a [href]="project.linkLicence" target="_blank">{{ project.linkLicence }}</a>
+                    </td>
+                  </tr>
+              </tbody>
+          </table>
+         
+      </div>
+<br>
+<br>
+<br>
+      <div class="links-description">
+        <div class="link">
+            <a [routerLink]="'/Specification/SpecificationHome/getHLD/' + project.id">High Level Design (HLD)</a>
+            <p>utilisez ce formulaire pour le enregistrements de nouvelles HLD ou consulter les anciennes version</p>
+        </div>
+        <div class="link">
+            <a [routerLink]="'/Specification/SpecificationHome/getSDD/' + project.id">Security Design Document (SDD)</a>
+            <p>utilisez ce formulaire pour le enregistrements de nouvelles SDD ou consulter les anciennes version</p>
+        </div>
+        <div class="link">
+            <a [routerLink]="'/Controle/ControleHome/getPENTEST/' + project.id">Pentest</a>
+            <p>utilisez ce formulaire pour le enregistrements de nouvelles Pentest ou consulter les anciennes version</p>
+        </div>
+        <div class="link">
+            <a [routerLink]="'/Controle/ControleHome/getVeracode/' + project.id">Veracode</a>
+            <p>utilisez ce formulaire pour le enregistrements de nouvelles Veracode ou consulter les anciennes version</p>
+        </div>
+        <div class="link">
+            <a [routerLink]="'/Technologie/TechnologieHome/get/' + project.id">Technologie</a>
+            <p>utilisez ce formulaire pour le enregistrements de nouvelles Technologie ou consulter les anciennes version</p>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+  </div>
+</div>
+
+<br>
+

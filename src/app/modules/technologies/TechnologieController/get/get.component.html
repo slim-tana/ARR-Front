@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <div class="project-details">
+    <div class="back-arrow">
+      <a (click)="goBack()">
+        <h3 style="color: #dc6900">Retour</h3>
+      </a>
+    </div>
+    <div class="details-header">
+      <h1>Technologies</h1>
+    </div>
+    <div class="details-table">
+      <table>
+        <thead>
+          <tr>
+          
+            <th>Nom</th>
+            <th>Version</th>
+            <th>Licence</th>
+            <th>Lien</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let element of data">
+   
+            <td>{{ element.name }}</td>
+            <td>{{ element.version }}</td>
+            <td>
+              <a [href]="element.license" target="_blank">{{ element.license }}</a>
+          </td>
+          <td>
+            <a [href]="element.link" target="_blank">{{ element.link }}</a>
+        </td>
+        
+ 
+            <td>
+              <button mat-icon-button color="primary" (click)="onEdit(element)"><mat-icon>edit</mat-icon></button>
+              <button mat-icon-button color="primary" (click)="onDelete(element)"><mat-icon>delete</mat-icon></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="nav-links">
+        <button (click)="onAdd()" class="custom-link">Enregistrer une technologie</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>{{data}} une Technologie</h1>
+<div mat-dialog-content>
+  <form [formGroup]="technologieFormGroup">
+    <br>
+    
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="Nom de technologie" formControlName="name" required>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Version</mat-label>
+      <input matInput placeholder="Version de technologie" formControlName="version" required>
+    </mat-form-field>
+
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Licence</mat-label>
+    <input matInput placeholder="Licence de technologie" formControlName="license" required>
+  </mat-form-field>
+
+<br>
+<mat-form-field appearance="outline">
+  <mat-label>Lien</mat-label>
+  <input matInput placeholder="Lien de technologie" formControlName="link" required>
+</mat-form-field>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [disabled]="!technologieFormGroup.valid" [mat-dialog-close]="this.technologieFormGroup">{{data}}</button>
+</div>
+</form>
+</div>
+
+

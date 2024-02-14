@@ -1,0 +1,54 @@
+table{
+  width: 95%;
+  padding-right: 20px;
+}
+.border{
+  padding: 10px;
+}
+.btn{
+  margin-right: 10px;
+}
+.fa {
+  margin-right: 10px;
+}.data-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table caption {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #dddddd;
+}
+
+.data-table th:nth-child(odd),
+.data-table td:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.data-table th:nth-child(1),
+.data-table td:nth-child(1) {
+  width: 5%;
+}
+
+.data-table th:nth-child(2),
+.data-table td:nth-child(2) {
+  width: 30%;
+}
+
+/* Customize width as needed */
+
+.data-table th[colspan="2"],
+.data-table th[colspan="4"],
+.data-table td[colspan="2"],
+.data-table td[colspan="4"] {
+  text-align: center;
+  font-weight: bold;
+}

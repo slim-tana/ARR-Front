@@ -1,0 +1,21 @@
+<div class="card film-item">
+  <div class="film-details">
+    <h2 class="film-title">{{ projet.projectName }}</h2>
+    <p class="film-description">{{ projet.description }}</p>
+    <div class="film-info">
+      <p class="film-info-item">Date: {{ projet.date }}</p>
+      <p class="film-info-item">Ticket: {{ projet.id }}</p>
+      <div class="button-container">
+        <button [routerLink]="'/Projet/ProjetHome/detail/' + projet.id" mat-icon-button  title="Voir les détails">
+          <mat-icon class="custom-icon">visibility</mat-icon>
+    
+        </button>
+        <button [routerLink]="'/Projet/ProjetHome/update/' + projet.id" mat-icon-button  title="Mettre à jour">
+          <mat-icon class="custom-icon">edit</mat-icon>
+
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>

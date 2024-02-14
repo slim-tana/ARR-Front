@@ -1,0 +1,66 @@
+<div>
+  <div> 
+    <h1 *ngIf="ListProjet "> Displaying {{ListProjet.length }} Projets </h1>
+  </div>
+  <br>
+
+  <div class="data-table" *ngIf="ListProjet && ListUser && ListTechnologiesClassification && ListTechnologyOwner && ListBusinessOwners">
+    <table>
+      <caption>Liste des Données</caption>
+      <thead>
+        <tr>
+          <th colspan="2">Projets</th>
+          <th colspan="2">Utilisateurs</th>
+          <th colspan="2">Classifications de Technologies</th>
+          <th colspan="2">Propriétaires de Technologie</th>
+          <th colspan="2">Propriétaires Commerciaux</th>
+        </tr>
+        <tr>
+          <th>Ticket</th>
+          <th>Nom du projet</th>
+          <th>Nom du Utilisateur</th>
+          <th>Email du Utilisateur</th>
+          <th>Type de Technologie</th>
+          <th>description de Technologie</th>
+          <th>propriétaire principal</th>
+          <th>propriétaire secondaire</th>
+          <th>propriétaire principal</th>
+          <th>propriétaire secondaire</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="ListProjet.length || ListUser.length || ListTechnologiesClassification.length || ListTechnologyOwner.length || ListBusinessOwners.length; else noData">
+          <tr *ngFor="let project of ListProjet; let i = index">
+            <td>{{ project.id }}</td>
+            <td>{{ project.projectName }}</td>
+            <!-- Répétez pour d'autres colonnes nécessaires -->
+            <ng-container *ngIf="ListUser[i]">
+              <td>{{ ListUser[i].firstName }}</td>
+              <td>{{ ListUser[i].email }}</td>
+              <!-- Répétez pour d'autres colonnes nécessaires -->
+            </ng-container>
+            <ng-container *ngIf="ListTechnologiesClassification[i]">
+              <td>{{ ListTechnologiesClassification[i].type }}</td>
+              <td>{{ ListTechnologiesClassification[i].description }}</td>
+              <!-- Répétez pour d'autres colonnes nécessaires -->
+            </ng-container>
+            <ng-container *ngIf="ListTechnologyOwner[i]">
+              <td>{{ ListTechnologyOwner[i].primaryOwner }}</td>
+              <td>{{ ListTechnologyOwner[i].secondaryOwner }}</td>
+              <!-- Répétez pour d'autres colonnes nécessaires -->
+            </ng-container>
+            <ng-container *ngIf="ListBusinessOwners[i]">
+              <td>{{ ListBusinessOwners[i].primaryOwner }}</td>
+              <td>{{ ListBusinessOwners[i].secondaryOwner }}</td>
+              <!-- Répétez pour d'autres colonnes nécessaires -->
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <ng-template #noData>
+      <p>Aucune donnée disponible.</p>
+    </ng-template>
+  </div>
+  
+</div>

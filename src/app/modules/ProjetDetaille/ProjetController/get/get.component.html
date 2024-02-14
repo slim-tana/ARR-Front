@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <br>
+  <h1 mat-dialog-title  align="center">Details </h1>
+
+<br>
+
+<table *ngIf="projects">
+  <tr>
+    <th>Project Name</th>
+    <th>Date</th>
+    <!-- Ajoutez d'autres en-têtes de colonnes pour les autres attributs -->
+  </tr>
+  <tr *ngFor="let project of projects">
+    <td>{{ project.projectName }}</td>
+    <td>{{ project.date }}</td>
+    <!-- Ajoutez d'autres cellules pour les autres attributs -->
+  </tr>
+</table>
+
+<h1 align="center">Users</h1>
+<table *ngIf="users">
+  <tr>
+    <th>Creator Name</th>
+    <!-- Ajoutez d'autres en-têtes de colonnes pour les autres attributs -->
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.firstName }}</td>
+    <!-- Ajoutez d'autres cellules pour les autres attributs -->
+  </tr>
+</table>
+<br>
+<br>
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="/Specification/SpecificationHome/getHLD" class="nav-link">High level design HLD</a>
+</li>
+<br>
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="/Specification/SpecificationHome/getSDD" class="nav-link">Security design document SDD</a>
+</li>
+<br>
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="/Controle/ControleHome/getVeracode" class="nav-link">Pentest</a>
+</li>
+<br>
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="/Controle/ControleHome/getPENTEST" class="nav-link">Veracode</a>
+</li>
+<br>
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="/Technologie/TechnologieHome/get" class="nav-link">Technologie</a>
+</li>
+
+</div>

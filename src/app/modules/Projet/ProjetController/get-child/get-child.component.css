@@ -1,0 +1,96 @@
+.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 280px!important;
+}
+
+.film-details {
+  text-align: center;
+}
+
+.film-title {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+.film-description {
+  color: #555;
+}
+
+.film-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.film-info-item {
+  margin: 5px 0;
+  color: #777;
+}
+
+
+.button-container {
+  position: absolute;
+  bottom: -5px;
+  left: -15px;
+  right: 3px;
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.custom-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s; /* Ajout de la transition sur la couleur */
+  background-color: #4285f4;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-link:hover {
+  background: #3367d6;
+  color: #fff; /* Modification de la couleur du texte au survol */
+}
+
+.custom-link mat-icon {
+  font-size: 24px;
+}
+
+.custom-link .button-text {
+  margin-top: 5px;
+  display: none;
+  transition: opacity 0.3s; /* Ajout de la transition d'opacité */
+}
+
+.custom-link:hover .button-text {
+  display: block;
+  opacity: 1; /* Affichage du texte avec une opacité totale au survol */
+}
+.custom-icon{
+  color: #dc6900 !important;
+}
